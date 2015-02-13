@@ -2,11 +2,13 @@
 "http://www2.seattle.gov/fire/realtime911/getRecsForDatePub.asp?incDate=1%2F24%2F2015&rad1=des
 """
 
+
 from scrapy.spider import Spider
 from scrapy.selector import HtmlXPathSelector
 from seattle911.items import Seattle911Item
 
 
+# TODO: rewite this to make sense even though it works
 def day_finder(month, year):
     is_leap_year = (0 if (year % 4) or ((year % 100 == 0) and (year % 400))
                     else 1)
@@ -15,7 +17,7 @@ def day_finder(month, year):
     return days_in_month
 
 
-months = range(1,13)
+months = range(1, 13)
 years = range(2004, 2015)
 
 base_url = "http://www2.seattle.gov/fire/realtime911/getRecsForDatePub.asp?incDate="
@@ -26,7 +28,7 @@ for year in years:
     for month in months:
         for day in range(day_finder(month, year) + 1):
             start_url = (base_url + str(month) + "%2F"
-                        + str(day) + "%2F" + str(year) + "&rad1=des")
+                         + str(day) + "%2F" + str(year) + "&rad1=des")
             starts_urls.append(start_url)
 
 
