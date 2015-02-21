@@ -14,4 +14,4 @@ class Seattle911Item(Item):
     incident_number = Field()
     units = Field()
     location = Field()
-    _type = Field()
+    type = Field()

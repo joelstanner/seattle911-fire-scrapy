@@ -13,7 +13,7 @@ BOT_NAME = 'seattle911'
 SPIDER_MODULES = ['seattle911.spiders']
 NEWSPIDER_MODULE = 'seattle911.spiders'
 
-DOWNLOAD_DELAY = 10
+DOWNLOAD_DELAY = 6
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'seattle911 (+http://www.yourdomain.com)'
+USER_AGENT = 'seattle911 project for codefellows.org SEA-D31 (+http://www.codefellows.com)'

@@ -18,7 +18,7 @@ def day_finder(month, year):
 
 
 months = range(1, 13)
-years = range(2004, 2015)
+years = range(2004, 2010)
 
 base_url = "http://www2.seattle.gov/fire/realtime911/getRecsForDatePub.asp?incDate="
 
@@ -50,6 +50,6 @@ class MySpider(Spider):
                 item['incident_number'] = row.xpath("td[2]/text()").extract()
                 item['units'] = row.xpath("td[4]/text()").extract()
                 item['location'] = row.xpath("td[5]/text()").extract()
-                item['_type'] = row.xpath("td[6]/text()").extract()
+                item['type'] = row.xpath("td[6]/text()").extract()
                 items.append(item)
         return items
